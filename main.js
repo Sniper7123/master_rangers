@@ -1,5 +1,3 @@
-
-// Create canvas variable
 var canvas=	new fabric.Canvas('myCanvas');
  block_y=1;
  block_x=1;
@@ -15,14 +13,14 @@ function new_image(get_image)
 	fabric.Image.fromURL(get_image, function(Img){
 	block_image_object= Img;
 
-		block_image_height.scaleToWidth(block_image_width)
-		block_image_height.scaleToHeight(block_image_height)
+		block_image_object.scaleToWidth(block_image_width)
+		block_image_object.scaleToHeight(block_image_height)
 		block_image_object.set({
-top=block_x,
-left=block_y
+		top=block_y,
+		left=block_x
 		});			
 		canvas.add(block_image_object);			
-	})
+	});
 }
 
 window.addEventListener("keydown", my_keydown);
@@ -35,7 +33,7 @@ console.log(keyPressed);
 	if(keyPressed == '82') // add appropriate keycode
 	{
 		// upload red ranger
-		new_image('rr.png');
+		new_image('rr.jpg');
 		console.log("r");
 	}
 	if(keyPressed == '71')
